@@ -23,7 +23,7 @@ Or install it yourself as:
 To use this gem run
 
 ```ruby
-ruby bin/run.rb
+$ ruby bin/run.rb
 ```
 
 ## Contributing
