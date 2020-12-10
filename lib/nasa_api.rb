@@ -1,4 +1,3 @@
-require 'pry'
 class API
     URL = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories"
 

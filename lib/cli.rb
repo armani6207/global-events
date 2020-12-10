@@ -1,4 +1,3 @@
-require 'pry'
 class CLI
     @@prompt = TTY::Prompt.new
     def menu
