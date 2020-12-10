@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'terminal-table'
 require 'tty-prompt'
 require 'open-uri'
 require 'net/http'

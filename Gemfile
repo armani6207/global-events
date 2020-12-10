@@ -5,3 +5,5 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "tty-prompt"
+gem 'pry'
+gem 'terminal-table'

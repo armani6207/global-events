@@ -1,22 +1,45 @@
 class Events
+    attr_accessor :category, :title, :coordinates, :date_detected 
 
-    def get_info(id)
-        API.new.event_titles(id)
+    @@all = []
+
+    def initialize(title, category, coordinates, date_detected)
+        @@all << self
+        @title = title
+        @category = category
+        @coordinates = coordinates
+        @date_detected = date_detected
     end
 
-    def  earthquakes
-        self.get_info(6)
+    def self.get_event(category)
+        @@all.find_all{|x| x.category == category}
     end
 
-    def volcanoes
-        self.get_info(12)
+    def self.populate_events
+        API.new.generate_events if @@all == []
     end
 
-    def severe_storms
-        self.get_info(10)
+    def  self.earthquakes
+        self.populate_events
+        self.get_event("Earthquakes")
     end
 
-    def wildfires
-        self.get_info(8)
+    def self.volcanoes
+        self.populate_events
+        self.get_event("Volcanoes")
+    end
+
+    def self.severe_storms
+        self.populate_events
+        self.get_event("Severe Storms")
+    end
+
+    def self.wildfires
+        self.populate_events
+        self.get_event("Wildfires")
+    end
+
+    def self.reset
+        @@all.clear
     end
 end
